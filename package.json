@@ -1,0 +1,44 @@
+{
+  "name": "slides-about-slides",
+  "version": "1.0.0",
+  "description": "Slides, about slides!",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "js": "rollup -c",
+    "js:watch": "rollup -c -w",
+    "dev": "gulp serve & npm run js:watch",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Snugug/slides-about-slides.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Snugug/slides-about-slides/issues"
+  },
+  "homepage": "https://github.com/Snugug/slides-about-slides#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "babel-preset-minify": "^0.4.3",
+    "browser-sync": "^2.24.7",
+    "eyeglass": "^1.5.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "prismjs": "^1.15.0",
+    "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "sass": "^1.13.4"
+  },
+  "dependencies": {
+    "stage-fright": "^2.0.1"
+  }
+}
