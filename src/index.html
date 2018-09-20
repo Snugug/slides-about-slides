@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <title>Slides about Slides</title>
   <link rel="stylesheet" href="css/style.css">
-  <script type="module" src="js/main.js"></script>
+  <script type="module" defer src="js/main.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <article class="_stage">
@@ -21,33 +22,37 @@
     <section class="_stage--group">
       <div class="_stage--slide" data-state="movie">
         <div class="_stage--content">
-          <video data-autoplay preload="none" poster="images/tbl-poster.jpg" title="Tim Berners-Lee 'This is for Everyone' from the London Olympics Opening Ceremonies 2012">
-            <source src="videos/tbl-for-everyone.mp4">
-          </video>
+          <video data-autoplay preload="none" poster="images/tbl-poster.jpg" muted inline title="Tim Berners-Lee 'This is for Everyone' from the London Olympics Opening Ceremonies 2012" data-src="videos/tbl-for-everyone.mp4"></video>
           <aside class="_stage--notes">
             <p>Since its inception, from its very creator Tim Berners-Lee, the web has been envisioned as something for everyone. Making that a reality, though, can be difficult. How can we ensure that what we're building can live up to that promise? By looking at some of the challenges of reaching the next billion people coming online, we can learn how to improve what we deliver not just for them, but for everyone as well.</p>
+            <p>The next <a href="https://developers.google.com/web/billions/">billion people</a> will…</p>
           </aside>
         </div>
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p>How do we reach the next <a href="https://developers.google.com/web/billions/">billion people</a>?</p>
-          <ul>
-            <li class="fragment">They'll be virtually all be on mobile, with the norm being low-spec, low-cost devices</li>
-            <li class="fragment">They'll have low bandwidth connections with intermittent connectivity</li>
-            <li class="fragment">The connectivity they'll have is going to be expensive</li>
-            <li class="fragment">Layouts that aren't comfortably usable and graphics-heavy content will frustrate them, so they'll overlook it or avoid it.</li>
+          <ul class="square">
+            <li class="big-emoji"><span class="inline-emoji">📱</span></li>
+            <li class="fragment big-emoji"><span class="inline-emoji">🐌</span></li>
+            <li class="fragment big-emoji"><span class="inline-emoji">💰</span></li>
+            <li class="fragment big-emoji cross-out"><span class="inline-emoji">🖥</span></li>
           </ul>
         </div>
+        <aside class="_stage--notes">
+          <ol>
+            <li>Virtually all be on mobile, with the norm being low-spec, low-cost devices</li>
+            <li>They'll have low bandwidth connections with intermittent connectivity</li>
+            <li>The connectivity they'll have is going to be expensive</li>
+            <li>Layouts that aren't comfortable to use and graphics-heavy content will frustrate them, so they'll overlook it or avoid it.</li>
+          </ol>
+        </aside>
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
           <h2>Hey! This Sounds Familiar</h2>
         </div>
         <aside class="_stage--notes">
-          <p>That sounds like Responsive Web Design! We've been <a href="https://alistapart.com/article/responsive-web-design">doing that since 2010</a></p>
-          <p>That sounds like a Progressive Web App! We've been hearing <a href="https://www.youtube.com/watch?v=MyQ8mtR9WxI">talks on that since 2015</a>!</p>
-          <p>It wouldn't be a JavaScript conference without a performance talk!</p>
+          <p>That sounds like Responsive Web Design, maybe with a hint of Progressive Web Apps!</p>
         </aside>
       </div>
       <div class="_stage--slide">
@@ -60,25 +65,18 @@
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <h3>First Contentful Paint</h3>
-          <a href="https://httparchive.org/reports/loading-speed?start=2011_07_15&end=latest#fcp">
-            <img src="images/first-contentful-paint.png" alt="First Contentful Paint trend from httparchive.org showing a 10.4% increase in the median to 5.3 seconds for mobile from December 15, 2016 to August 1, 2018 and a 32.1% decrease in the median to 1.9 seconds for desktop">  
-          </a>
+          <h3>First Contentful Paint and Time to Consistently Interactive</h3>
+          <div>
+            <a class="float-half" href="https://httparchive.org/reports/loading-speed?start=2011_07_15&end=latest#fcp">
+              <img src="images/first-contentful-paint.png" alt="First Contentful Paint trend from httparchive.org showing a 10.4% increase in the median to 5.3 seconds for mobile from December 15, 2016 to August 1, 2018 and a 32.1% decrease in the median to 1.9 seconds for desktop">  
+            </a>
+            <a class="float-half" href="https://httparchive.org/reports/loading-speed?start=2011_07_15&end=latest#ttci">
+              <img src="images/consistently-interactive.png" alt="Time to Consistently Interactive trend from httparchive.org showing a 20.7% year-over-year increase in median to 14.6 seconds from June 1, 2017 to June 1, 2018">  
+            </a>
+          </div>
         </div>
         <aside class="_stage--notes">
-          <p>First Contentful Paint: number of seconds from the time the navigation started until the page's primary content appears on the screen.</p>
-        </aside>
-      </div>
-      <div class="_stage--slide">
-        <div class="_stage--content">
-          <h3>Time to Consistently Interactive</h3>
-          <a href="https://httparchive.org/reports/loading-speed?start=2011_07_15&end=latest#ttci">
-            <img src="images/consistently-interactive.png" alt="Time to Consistently Interactive trend from httparchive.org showing a 20.7% year-over-year increase in median to 14.6 seconds from June 1, 2017 to June 1, 2018">  
-          </a>
-        </div>
-        <aside class="_stage--notes">
-          <p>Time to Consistently Interactive: number of seconds from the time the navigation started until the page is fully interactive and the network is idle</p>
-          <p>There appears to be some issue with the data starting around June 1, 2018 where there is a drastic trend downward (~30 percentage points in 2 months) so I'm showing year over year.</p>
+          <p>First Contentful Paint, how long it takes to see the page's primary content, and Time to Consistently Interactive, how long it takes until the page is usable, have been rising, on average 10.4% over the past 18 months and 21.5% year-over-year</p>
         </aside>
       </div>
       <div class="_stage--slide">
@@ -95,7 +93,7 @@
         </div>
       </header>
       <div class="_stage--slide" style="background-color: rgb(123, 183, 164);">
-        <video src="videos/pandas.mp4" data-autoplay loop title="Pandas sliding down a slide"></video>
+        <video data-src="videos/pandas.mp4" data-autoplay loop title="Pandas sliding down a slide"></video>
       </div>
       <div class="_stage--slide">
         <p class="big-emoji">😜</p> 
@@ -103,11 +101,14 @@
           <p>Not <em>those</em> slides, <em>these</em> slides! The slides you're looking at now!</p>
         </aside>
       </div>
-      <div class="_stage--slide">
+      <div class="_stage--slide" data-state="movie">
         <div class="_stage--content">
-          <p>They so <em class="pretty">pretty</em>, they <em class="move-and-groove">move and groove</em>, and they're entirely powered by this nifty little JavaScript presentation framework I cooked up (amusingly called <a href="https://github.com/Snugug/stage-fright">Stage Fright</a>).</p>
-          <p class="fragment">Let's dive in to <em>how</em> Stage Fright was built to see what lessons we can pull for our day-to-day work!</p>
+          <video data-autoplay loop muted inline class="video--center" data-src="videos/stage-fright.mp4" title="Stage Fright"></video>
         </div>
+        <aside class="_stage--notes">
+          <p>They're powered by this nifty little JavaScript presentation framework I cooked up called <a href="https://github.com/Snugug/stage-fright">Stage Fright</a>.</p>
+          <p>Let's dive in to <em>how</em> Stage Fright was built to see what lessons we can pull for our day-to-day work!</p>
+        </aside>
       </div>
     </section>
 
@@ -119,10 +120,12 @@
       </header>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p>My process starts not at the individual tools or techniques used to develop, but at the the user experience that they enable</p>
-          <p class="fragment">In fact, I specifically aim to <em>not</em> describe my experiences in terms of individual tools and techniques</p>
-          <p class="fragment">By framing our work this way, we are able to come up with multiple solutions to a problem, instead of multiple iterations on the same solution</p>
+          <p>My process starts not at features or tools or techniques, but at the <strong><br>user's problem I'm trying to solve</strong></p>
         </div>
+        <aside class="_stage--notes">
+          <p>In fact, I specifically aim to <em>not</em> describe those problems in terms of tools and techniques</p>
+          <p>Instead, by framing my work this way, I'm able to come up with multiple solutions to a problem, instead of multiple iterations on the same solution</p>
+        </aside>
       </div>
       <div class="_stage--slide">
         <div class="design-thinking">
@@ -130,7 +133,7 @@
           <span class="fragment big-emoji">🏞</span>
         </div>
         <aside class="_stage--notes">
-          <p>A Design Thinking exercise I really like to play goes something like this: an initial prompt of <em>Design a Bridge</em> is given. After a minute or so, a follow-up prompt, <em>Design a Better Way to Cross a River</em>, is then asked. This reframing of prompt elicits different, more creative responses.</p>
+          <p>A Design Thinking exercise I really like to play goes something like this: an initial prompt of <em>Design a Bridge</em> is given. After a minute or so, a follow-up prompt, <em>Design a Better Way to Cross a River</em>, is then asked. This reframing of prompt elicits different, more creative responses, and more importantly no longer constrains solutions to a bridge.</p>
           <p>Development criteria can be framed in the same way. Instead of an issue to <em>Create a drag-to-reorder table</em>, you can have an issue to <em>Allow users to determine the order of a set of elements</em>. The latter allows for a wider set of solutions.</p>
         </aside>
       </div>
@@ -144,7 +147,6 @@
             <li>Fancy transitions, animations, and layouts are cool, but are pretty unweildly when not on a desktop and can impair accessible technology's ability to navigate a presentation. A better one could be usable regardless of user's access choice</li>
             <li>Presentations usually have lots of videos and images, making them heavy. A better one would be small to begin with, and only load these big assets when needed</li>
             <li>As learning tools, a better presentation should be available whenever a user requests them, even if they're offline</li>
-            <li></li>
           </ul>
         </aside>
       </div>
@@ -174,7 +176,7 @@
         </div>
         <aside class="_stage--notes">
           <p>Answering these questions, and iterating, combining, and throwing away multiple solutions, has led me to creating much better solutions to our <strong>core experiences</strong>.</p>
-          <p>Having answered these questions, I <strong>grade</strong> the different stages of our solution; my HTML or HTML+CSS experience may be Grade X, my HTML, CSS, and Basic JavaScript solution may be Grade B, and my fully awesome HTML, CSS, and full JavaScript solution may be Grade A. We can do this at the full project level, but we can also do this grading at the component level, which Filament Group back in 2013 coined <a href="https://www.filamentgroup.com/lab/grade-the-components.html">Graded Components</a>. Likely, it'll be some combination of both</p>
+          <p>Having answered these questions, I <strong>grade</strong> the different stages of our solution; my HTML or HTML+CSS experience may be Grade X, my HTML, CSS, and Basic JavaScript solution may be Grade B, and my fully awesome HTML, CSS, and full JavaScript solution may be Grade A. We can do this at the full project level, but we can also do this grading at the component level. Likely, it'll be some combination of both</p>
           <p>Let's try this out for our slide deck:</p>
         </aside>
       </div>
@@ -184,7 +186,7 @@
           <h3>What are the grades for a Slide Deck?</h3>
         </div>
         <aside class="_stage--notes">
-          <p>At it's core, a slide deck is basically a blog post with a real fancy, interactive layout!</p>
+          <p>At it's core, a slide deck is basically a blog post with a real fancy, interactive layout! Let's ballpark some grades for it!</p>
         </aside>
       </div>
       <div class="_stage--slide">
@@ -224,14 +226,20 @@
         <div class="_stage--content">
           <p>There are three groups of things I think about when writing HTML:</p>
           <ul>
-            <li class="fragment">Tag semantics, for which I still love <a href="http://html5doctor.com/">HTML5 Doctor</a></li>
-            <li class="fragment">Accessibility, for which I reference <a href="https://inclusive-components.design/">Inclusive Components</a> by Heydon Pickering, <a href="https://davatron5000.github.io/a11y-nutrition-cards/">A11Y Nutrition Cards</a> by Dave Rupert, <a href="https://abookapart.com/products/accessibility-for-everyone">Accessibility for Everyone</a> by Laura Kalbag, and if I really need to dive in, the <a href="https://www.w3.org/TR/wai-aria-1.1/">WAI-ARIA spec</a> itself (it's mostly readable, I swear!)</li>
-            <li class="fragment">Microdata for SEO and semantic sharing, for which I turn to <a href="https://schema.org/">Schema.org</a></li>
+            <li class="fragment">Tag semantics</li>
+            <li class="fragment">Accessibility</li>
+            <li class="fragment">Microdata for SEO and semantic sharing</li>
           </ul>
         </div>
         <aside class="_stage--notes">
+          <ol>
+            <li>…for which I still love <a href="http://html5doctor.com/">HTML5 Doctor</a></li>
+            <li>…for which I reference <a href="https://inclusive-components.design/">Inclusive Components</a> by Heydon Pickering, <a href="https://davatron5000.github.io/a11y-nutrition-cards/">A11Y Nutrition Cards</a> by Dave Rupert, <a href="https://abookapart.com/products/accessibility-for-everyone">Accessibility for Everyone</a> by Laura Kalbag, and if I really need to dive in, the <a href="https://www.w3.org/TR/wai-aria-1.1/">WAI-ARIA spec</a> itself (it's mostly readable, I swear!)</li>
+            <li>…for which I turn to <a href="https://schema.org/">Schema.org</a></li>
+          </ol>
+          <hr>
           <p>With these three things at the front of my mind when I write my HTML, I can be fairly confident that I'm starting from a usable, searchable, share-able, and accessible place.</p>
-          <p>I focus heavily here on HTML semantics and accessible patterns. We get so much for free, accessibility-wise, by using semantically-correct markup from the get-go. Starting with JavaScript and working backwards has usually always required me to go back to my HTML first principles to fix accessibility woes. Even seemingly small things, like using <code>aria-expanded</code> instead of a custom class or in-memory JavaScript state, translate to big wins</p>
+          <p>I focus heavily here on HTML semantics and accessible patterns. We get so much for free, accessibility-wise, by using semantically-correct markup from the get-go. Starting with JavaScript and working backwards has usually required me to go back to my HTML first principles to fix what I've made. Even seemingly small things, like using <code>aria-expanded</code> instead of a custom class or in-memory JavaScript state, translate to big wins</p>
         </aside>
       </div>
       <div class="_stage--slide">
@@ -257,18 +265,18 @@
 &lt;article&gt;</code></pre>
         </div>
         <aside class="_stage--notes">
-          <p>Let's break down this HTML. Our slide deck is one logical work that can't (or shouldn't) be divided up in to smaller pieces, so we mark it up as an <code>article</code>.</p>
-          <p>We have a concept of "slides" and "slide groups", but the actual markup used varies based on context. The first slide group is really the heading for the whole article, so it's marked up with the semantic <code>header</code> tag, but the actual slide is marked up with the semantic-free <code>div</code> tag because we really only need it there to mimic structure. Similarly, subsequent groups are marked up with <code>section</code> tags as they should each represent a logical section in our work, with the first <em>slide</em> marked up as a <code>header</code> as its the heading for that section, and subsequent slides are again marked up with the semantic-free <code>div</code> as we want a structural separation but not a semantic one.</p>
-          <p>Notes are related to the content around it, but separate from the content around it. As such, they're marked up with <code>aside</code> tags</p>
-          <p>But what about more advanced functionality, like user interfaces with multiple options and moving pieces? Things like forms with <code>button</code>s and the <code>name</code> attribute actually allow you to build some pretty dynamic experiences without a line of JavaScript, and ensure the work you're doing is semantic and accessible in the process.</p>
+          <p>Our slide deck is one logical work that can't (or shouldn't) be divided up in to smaller pieces, so we mark it up as an <code>article</code>.</p>
+          <p>We have a concept of "slides" and "slide groups", but the actual markup varies based on context. The first slide group is really the heading for the whole article, so it's marked up with a <code>header</code> tag. Subsequent groups are marked up with <code>section</code> tags as they're logical section in our work, with the first <em>slide</em> in each marked up as a <code>header</code> for that section. Notes are related but separate to the content around it, so they're <code>aside</code>s. Wherever we want a structural separation but not a semantic one, a <code>div</code> is used</p>
+          <p>But what about more advanced functionality, like user interfaces with multiple options and moving pieces? A <code>form</code> with named <code>button</code>s is pretty powerful, allowing for dynamic experiences without a line of JavaScript. They also ensure our work is semantic and accessible in the process.</p>
         </aside>
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p>We can finish up our <em>Grade X</em> experience by applying a base coat of responsive CSS to our markup, using the classes put in place, and adding more styling hooks as need.</p>
+          <video data-autoplay loop muted inline class="video--center" data-src="videos/slides-about-slides.mp4" title="Stage Fright"></video>
         </div>
         <aside class="_stage--notes">
-          <p>Our next step is enhancing this baseline Grade X experience, which can sometimes be a little tricky. If possible, matching layout and styling between the initial experience and the enhanced experience (at least in the initially viewable area) will go a long way to making the transition feel seamless for our users.</p>
+          <p>We can finish up our <em>Grade X</em> experience by applying a base coat of responsive CSS</p>
+          <p>Our next step is enhancing this baseline Grade X experience, which can sometimes be a little tricky. If possible, matching layout and styling between the initial experience and the enhanced experience (at least in the initially viewable area) will go a long way to making the transition feel seamless for our users. To enhance our JavaScript, though, we should be…</p>
         </aside>
       </div>
     </section>
@@ -281,31 +289,32 @@
       </header>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p>From our baseline Grade X experience, we now want to enhance with JavaScript. Let's set the context for answering our question "what do we <em>need</em>" from JavaScript to enhance this experience</p>
+          <p><a href="http://responsivenews.co.uk/post/18948466399/cutting-the-mustard">Cutting the Mustard</a> is a Progressive Enhancement technique used to ensure a baseline level of functionality for an enhanced experience</p>
+        </div>
+        <aside class="_stage--notes">
+          <p>Originally created by the BBC to differentiate between HTML5 browsers and non-HTML5 browsers, the concept can be used as a future-friendly, feature-detection based way of ensuring a given baseline</p>
+        </aside>
+      </div>
+      <div class="_stage--slide">
+        <div class="_stage--content">
+          <p>Let's answer <em>what JavaScript Features or APIS do we want for our baseline?</em></p>
           <ul>
-            <li class="fragment">Enumerate the language features that are required for our enhancement</li>
-            <li class="fragment">Determine what language features or APIs that would drastically cut down on custom code we need to write</li>
-            <li class="fragment">Consider what language features or APIs could reduce the cost of maintenance</li>
-            <li class="fragment">Weigh the above with the performance, maintenance, and tooling cost of transpiling and polyfilling</li>
+            <li class="fragment">What do we <em>need</em> for our enhancement?</li>
+            <li class="fragment">What could reduce the cost of maintenance</li>
+            <li class="fragment">What would drastically cut down on the custom code we need to write</li>
           </ul>
           <aside class="_stage--notes">
-            <p>At this stage, I <em>only</em> consider what's natively supported in JavaScript. It's not until I come to a point where I would need to write custom code do I start to consider libraries or frameworks. When considering libraries or frameworks, I try to be stingy with what I allow in, paying special attention to the cost (tooling, performance, onboarding, etc…) of bringing one in and look for the tool with the lowest cost to implement. During this evaluation process, I tend to ding libraries or frameworks that require me to ship to my user more code than I need to specifically solve my problem, for instance a framework that bundles routing, state management, and component templating if I only need one of the three.</p>
-            <p>Once I've thought this through, I will have generated an <em>baseline level</em> of features and functions I need to provide the experience I want</p>
+            <p>I weigh these three questions with the performance, maintenance, and tooling costs of transpiling and polyfilling to come up with a baseline I'd be happy to work from.</p>
+            <p>At this stage, I <em>only</em> consider what's natively supported in JavaScript or the browser. It's not until I come to a point where there's a primitive missing do I start to consider libraries or frameworks.</p>
+            <p>When considering libraries or frameworks, I try to be stingy with what I allow in, paying special attention to the cost they bring, aiming to keep my total cost as small as possible. I also tend to ding them if they require me to ship more code than I need to solve my specific problem; for instance a framework that bundles routing, state management, and component templating if I only need one of the three.</p>
+            <p>Thinking about this for Stage Fright, there's lots of delicious modern JavaScript that I'd like to use, so let's cut the mustard so we can have that as our baseline</p>
           </aside>
         </div>
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p><a href="http://responsivenews.co.uk/post/18948466399/cutting-the-mustard">Cutting the Mustard</a> is a Progressive Enhancement technique used to determine a baseline level where an experience will be enhanced from</p>
-        </div>
-        <aside class="_stage--notes">
-          <p>Cutting the Mustard was originally created to differentiate between HTML5 browsers and non-HTML5 browsers</p>
-          <p>It's meant to be a future-friendly technique, so it's feature-detection based, not browser-detection based</p>
-        </aside>
-      </div>
-      <div class="_stage--slide">
-        <div class="_stage--content">
-          <p>Today, we can use <strong>JavaScript Modules</strong> to <a href="https://snugug.com/musings/modern-cutting-the-mustard/">Cut the Mustard for ES2015+ Browsers</a></p>
+          <p>Cutting the Mustard for <a href="https://snugug.com/musings/modern-cutting-the-mustard/">ES2015+ Browsers</a></p>
+          <h3><strong>JavaScript Modules</strong> to the rescue!</h3>
           <pre><code class="language-markup">&lt;script type="module" defer src="./mustard.js"&gt;&lt;/script&gt;
 &lt;script nomodule defer src="./no-mustard.js"&gt;&lt;/script&gt;
 
@@ -320,12 +329,14 @@
 &lt;/script&gt;</code></pre>
         </div>
         <aside class="_stage--notes">
-          <p>Browsers that understand modules will understand this and either load or not load the correct JavaScript, and browsers that don't understand this will simply ignore anything of <code>type="module"</code></p>
+          <p>Browsers that support modules will only load our <code>mustard</code> code and ignore our <code>no-mustard</code>, while browsers that don't don't know what <code>type="module"</code> is and use the <code>no-mustard</code> JavaScript</p>
+          <p>With the mustard now cut, we get a great modern baseline set of JavaScript to use!</p>
         </aside>
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p>Our new <a href="https://caniuse.com/#compare=edge+16,firefox+60,chrome+61,safari+10.1,opera+48,ios_saf+10.3,and_chr+67,and_ff+60">modern <span class="js">JS</span> baseline</a></p>
+          <p>Behold Our new</p>
+          <h2>Modern <span class="js">JS</span> Baseline</a></h2>
           <ul class="columns">
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const"><code>const</code></a> and partial <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let"><code>let</code></a> support</li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promises</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"><code>async</code> functions</a></li>
@@ -342,11 +353,11 @@
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p>By combining our experience grading with <strong>Cutting the Mustard</strong>, a very neat thing happens; we're able to ship less JavaScript to <em>both</em> our higher-grade experience and our baseline experience, improving performance without compromising quality.</p>
+          <video data-autoplay loop muted inline class="video--center" data-src="videos/slides-about-slides-2.mp4" title="Stage Fright"></video>
         </div>
         <aside class="_stage--notes">
-          <p>A mostly or entirely native JavaScript experience to our high-experience users, and only the JavaScript needed for smaller experience enhancements to our baseline experience</p>
-          <p>To make this work, though, we <em>need</em> that baseline Grade X experience to enhance from and need to be OK with our users having that graded experience. Not allowing for this gradation of experiences has helped lead us to the state we're currently in</p>
+          <p>By combining our experience grading with <strong>Cutting the Mustard</strong>, a very neat thing happens; we're able to ship less JavaScript to <em>both</em> our higher-grade experience <em>and</em> our baseline experience, improving performance without compromising quality!</p>
+          <p>To make this work, though, we <em>need</em> that baseline Grade X experience to enhance from and <em>need</em> to be OK with our users having that graded experience. Not allowing for this gradation of experiences has led us to our current state: delivering more code that's less performant to everyone.</p>
         </aside>
       </div>
     </section>
@@ -354,47 +365,48 @@
    <section class="_stage--group">
       <header class="_stage--slide">
         <div class="_stage--content">
-          <h2><span role="presentation">🎛 </span>Progressive State Management</h2>  
+          <h2><span role="presentation">👹 </span>Taming the State Beast</h2>  
         </div>
         <aside class="_stage--notes">
-          <p>There are a surprising number of things we want to keep track of and be able to update our enhanced experience with when they change. A state manager help us keep this all in check</p>
+          <p>With our experience enhanced, we're likely going to want our interface to react to user interaction. To do this, we're going to need to track state, but unfortunately…</p>
         </aside>
       </header>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p>State is <strong>hard</strong>. <span class="fragment"><br>State managers, especially reactive ones like we're going to use, can help make it easier</span></p>
-          <ul>
-            <li class="fragment">Keep all state in a single place</li>
-            <li class="fragment">Allow state updates to be published</li>
-            <li class="fragment">Allow components to subscribe to changes in state</li>
-          </ul>
+          <p>State is <strong>hard</strong></p>
+
+          <p class="fragment">State Managers <strong>keep all state in a single place</strong><br> and <strong>allow updates to be centrally published and subscribed to</strong></p>
         </div>
         <aside class="_stage--notes">
           <p>Keeping track of it, updating it, and responding to updates can get hairy really fast. Especially when it needs to be shared between many components or parts of a system.</p>
-          <p>Many state management systems, like Redux and Veux don't allow state to be changed directly, but rather have a level of indirection to ensure state is updated in a managed way</p>
-          <p>In addition to these benefits, introducing a state manager can make it easier to test your components and applications! Having a state manager makes it much easier to recreate a specific state and test against that specific state.</p>
+          <p>State managers, like Redux, Veux, or other reactive ones like what Stage Fright uses, can help make it easier by…</p>
+          <hr>
+          <p>State manager can make it easier to test too by making it easier to recreate and test against a specific state.</p>
+          <hr>
+          <p>Because we're shipping our Grade X components from the server, we will need to rebuild, or hydrate our state client-side. This can be tough, but I've got some tricks to smooth out the process!</p>
         </aside>
       </div>
-      <div class="_stage--slide">
+<!--       <div class="_stage--slide">
         <div class="_stage--content">
           <p>CSS Tricks has a <a href="https://css-tricks.com/build-a-state-management-system-with-vanilla-javascript/">tutorial</a> that is the basis for Stage Fright's state manager. It relies on JavaScript classes and Proxy Objects, so now that we've cut the mustard, we know we'll have those available to us!</p>
         </div>
-      </div>
+      </div> -->
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p>Client-side hydration (rebuilding of state) can be really hairy, but it doesn't have to be! I've found a few tricks to ease the difficulty:</p>
+          <p>Client-side <strong>hydration</strong> tricks:</p>
           <ul>
-            <li class="fragment">Map out what will and won't change, and focus hydration only on what will</li>
-            <li class="fragment">Use semantic HTML and include the correct aria attributes and <code>data-*</code> custom properties to hold information to make it easier to parse state and meta information</li>
-            <li class="fragment">Meaningful classes can help identify meaning in HTML-independent ways</li>
-            <li class="fragment">Structure state to group related pieces together and ease access to update</li>
+            <li class="fragment">Focus only on what will change</li>
+            <li class="fragment">Use semantic HTML and aria or custom attributes to hold state information</li>
+            <li class="fragment">Leverage classes to help identify structure in HTML-independent ways</li>
+            <li class="fragment">Group related bits of state together</li>
           </ul>
         </div>
         <aside class="_stage--notes">
-          <p>Because we have a slide deck, and the most common interaction is moving forward and backward, I've structured my "current slide" state as a <em>drumroll please…</em> <strong>doubly linked list</strong>! It's got the element, some meta information based on its surrounding elements, and I append the minimap progress link to each slide to access them together, as they need to be updated together.</p>
+          <p>Because we have a slide deck, and the most common interaction is moving forward and backward, I've structured Stage Fright's "current slide" state as a <em>drumroll please…</em> <strong>doubly linked list</strong>! There's the element, meta information like index and depth, and it's minimap link all bundled together </p>
+          <p>In addition to my current slide, Stage Fright only has 5 other pieces of state it tracks, and with those 6 items I have full insight in to all the moving pieces of Stage Fright and can make changes quickly, without much overhead.</p>
         </aside>
       </div>
-      <div class="_stage--slide">
+<!--       <div class="_stage--slide">
         <div class="_stage--content">
           <p>Stage Fright's state is comprised of 6 items:</p>
           <dl class="dl--no-grid">
@@ -427,14 +439,12 @@
         <aside class="_stage--notes">
           <p>With these handful of state items, we're able to control our whole application and precisely update all the moving parts, quickly and without much overhead.</p>
         </aside>
-      </div>
-      <div class="_stage--slide">
-        <div class="_stage--content">
-          <p>By determining <em>just</em> what we need hydrated, we can build our state really quickly.</p>
-          <p class="fragment">This will get the JavaScript that we are running, running quickly!</p>
-        </div>
+      </div> -->
+      <div class="_stage--slide" data-state="rube-goldberg">
+        <video data-autoplay loop muted inline class="video--goldberg" data-src="videos/rube-goldberg.mp4" title="Rube Goldberg machine"></video>
         <aside class="_stage--notes">
-          <p>What aren't we doing? We're not rewriting our HTML when state loads! We use what was provided to us from the server, and <em>enhance</em> on top of that from our hydrated state. This reduces the overhead of getting our users interactive with our code!</p>
+          <p>By determining just what we <em>need</em> hydrated, we can build our state fast and get our JavaScript parsed and running quickly!</p>
+          <p>What aren't we doing during hydration, though? We're not rerendering our HTML! We use what was provided to us from the server, and <em>enhance</em> on top of that from our hydrated state. This reduces the overhead of getting our users interactive with our code!</p>
         </aside>
       </div>
     </section>
@@ -450,20 +460,21 @@
       </header>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p>One of the best ways to improve both First Contentful Paint and Time to Consistently Interactive is by <em>only loading critical resources</em> initially, and defer the rest</p>
+          <p>Want to deliver fast? <strong class="fragment">Deliver Less!</strong></p>
         </div>
         <aside class="_stage--notes">
-          <p>Critical resources are the resources needed to render our critical, or on-screen, view. The key critical resources we're interested in, besides our HTML, are the CSS for our critical items, fonts that'll be used for those critical items, the JavaScript needed to enhance, and the images and video needed for our critical view</p>
+          <p>One of the best ways to improve performance is by loading only the critical, or initially view-able, resources, and deferring the rest.</p>
+          <p>The key critical resources we're interested in, besides our HTML, are the CSS for our critical items, the JavaScript needed to enhance them, the fonts that'll style them, and the images and video that'll make them pop</p>
           <p>Our goal is to <em>only</em> load those critical items first, and then load the rest as-needed</p>
         </aside>
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p>Our <strong>Critical CSS</strong> is the CSS we need to render our initial view. We want to inline this CSS in to our <code>&lt;head&gt;</code> so we don't need to make an additional request for it.</p>
-          <pre class="fragment"><code class="language-markup">&lt;link
-  rel="preload"
-  href="style.css"
-  as="style"
+          <p>Our <strong>Critical CSS</strong> is the CSS we need to render our initial viewable area.</p>
+          <pre class="fragment"><code class="language-markup">&lt;style&gt;
+/** Inlined Critical CSS **/
+&lt;/style&gt;
+&lt;link rel="preload" href="style.css" as="style"
   onload="this.onload=null;this.rel='stylesheet'"&gt;
 &lt;noscript&gt;&lt;link rel="stylesheet" href="style.css"&gt;&lt;/noscript&gt;
 &lt;script&gt;
@@ -472,14 +483,16 @@
 &lt;/script&gt;</code></pre>
         </div>
         <aside class="_stage--notes">
+          <p> We want to inline this CSS in to our <code>&lt;head&gt;</code> so we don't need to make an additional request for it, and lazyload the rest.</p>
           <p>Many of the component-based JavaScript frameworks that do server-side rendering can do this for you, often automatically! There's also a Node module called "critical" that can automatically extract and inline critical CSS for you</p>
-          <p>This isn't all of our CSS though! We still want to asynchronously load in the rest of our CSS. Filament Group has a great trick for this, <a href="https://github.com/filamentgroup/loadCSS">loadCSS</a>, that takes advantage of <code>preload</code> links to do this, with a polyfill for older browsers!</p>
-          <p>This code will preload our additional CSS and when it loads, set the onload to null (to prevent it firing again) and turn the link in to a fully-fledged CSS link by setting its <code>rel</code> attribute! If there's not JavaScript, we just load the stylesheet. We inline the minified polyfill, which is about 1Kb, and we're good to go!</p>
+          <hr>
+          <p>This isn't all of our CSS though! We still want to asynchronously load in the rest of our CSS. Filament Group has a great trick for this, <a href="https://github.com/filamentgroup/loadCSS">loadCSS</a>, that takes advantage of <code>preload</code> links to load our CSS asynchronously, with a polyfill for unsupported browsers!</p>
+          <p>Here, we inline our Critical CSS, preload the rest of our CSS, and inline the roughly 1KB polyfill</p>
         </aside>
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <h3>What's This <code>preload</code>? What about <code>prefetch</code>?!</h3>
+          <h3>What's All This About <code>preload</code> Then?!</h3>
 <!--           <dl class="dl--no-grid">
             <div class="fragment dl--grid">
               <dt><code>preload</code></dt>
@@ -492,34 +505,25 @@
           </dl> -->
         </div>
         <aside class="_stage--notes">
-          <p>Both <code>preload</code> and <code>prefetch</code> give browsers information about how they should prioritize loading of resources. As <a href="https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf">Addy Osmani describes in a Medium post</a> talking about how it works in Chrome, he recommends that we "preload resources we have high-confidence will be used in the current page, and prefetch resources likely to be used for future navigation".</p>
-          <p>While <code>prefetch</code> has much wider support than <code>preload</code>, we should <em>not</em> try to use <code>prefetch</code> as a fallback as that will result in multiple requests to the same resource. Instead, we can treat having it as performance progressive enhancement.</p>
-          <p>We're going to be using <code>preload</code> a few time to improve performance, with it being especially useful for fonts.</p>
+          <p><code>preload</code>, and its cousin <code>prefetch</code> are hints to give browsers information about how they should prioritize loading of resources. As <a href="https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf">Addy Osmani describes in a Medium post</a> talking about how it works in Chrome, he recommends that we "preload resources we have high-confidence will be used in the current page, and prefetch resources likely to be used for future navigation".</p>
+          <p>We're going to be using <code>preload</code> a few time to improve performance. Speaking of…</p>
         </aside>
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p>Because fonts are discovered late and loading them <em>can</em> block First Contentful Paint, we want to preload them too!</p>
-          <pre><code class="language-markup">&lt;link
-  rel="preload"
-  href="font.woff2"
-  as="font"
-  type="font/woff2"
-  crossorigin&gt;</code></pre>
+          <p><code>preload</code> fonts for faster First Contentful Paint</p>
+          <pre><code class="language-markup">&lt;link rel="preload" href="font.woff2"
+  as="font" type="font/woff2" crossorigin&gt;</code></pre>
         </div>
         <aside class="_stage--notes">
-          <p>Fonts get discovered late because they aren't downloaded until CSS starts to get applied that requires them! Preloading our fonts means that they'll likely be available when our CSS needs them</p>
-          <p>While you're likely to have multiple font formats in your <code>@font-face</code> definition, you should only <code>preload</code> the <code>woff2</code> version as all of the browsers that support <code>preload</code> also support <code>woff2</code>!</p>
-          <p>Note the <code>crossorigin</code> property! We need this when preloading fonts because they're fetched using anonymous CORS, even if they're on the same origin!</p>
+          <p>Fonts get discovered late because they aren't downloaded until CSS starts to get applied that requires them! Preloading our fonts means that they'll likely be available when our CSS needs them.</p>
+          <p><code>preload</code> cuts the mustard for <code>woff2</code> fonts, so we only want to preload them!</p>
         </aside>
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p>We can do the same with our progressively-enhanced JavaScript modules!</p>
-          <pre><code class="language-markup">&lt;link
-  rel="preload"
-  href="mustard.js"
-  as="script" &gt;
+          <p>And our JavaScript?</p>
+          <pre><code class="language-markup">&lt;link rel="preload" href="mustard.js" as="script" &gt;
 
 &lt;!-- Bottom of our HTML --&gt;
 
@@ -527,32 +531,29 @@
 &lt;script nomodule defer src="no-mustard.js"&gt;&lt;/script&gt;</code></pre>
         </div>
         <aside class="_stage--notes">
-          <p>We still put our JavaScript tag at the bottom of our HTML, and we still <code>defer</code> its execution until after the document is guaranteed to be parsed, but with the addition of our <code>preload</code> in our <code>head</code> we can start downloading the script as soon as possible! Best of all, only browsers that support modules support <code>preload</code>, so no extra JavaScript loaded for our lower-graded browsers!</p>
+          <p>We still put our JavaScript tag at the bottom of our HTML, and we still <code>defer</code> its execution until after the document is guaranteed to be parsed, but with the addition of our <code>preload</code> in our <code>head</code> we can start downloading the script as soon as possible! <code>preload</code> also cuts the mustard for JavaScript modules, so no extra JavaScript loaded for our lower-graded browsers!</p>
         </aside>
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <h3>Those pesky images tho</h3>
-          <a href="https://httparchive.org/reports/page-weight?start=2011_07_01&end=2018_07_01&view=list#bytesImg">
-            <img src="images/image-bytes.png" alt="Image Bytes trend from httparchive.org showing a 655.5% increase in the median to 794.0KB for mobile from July 1, 2011 to July 1, 2018 and a 141.1% increase in the median to 659.6KB for desktop">  
-          </a>
-        </div>
-      </div>
-      <div class="_stage--slide">
-        <div class="_stage--content">
-          <h3>Don't forget about video!</h3>
-          <a href="https://httparchive.org/reports/page-weight?start=2011_07_01&end=2018_07_01&view=list#bytesVideo">
-            <img src="images/video-bytes.png" alt="Video Bytes trend from httparchive.org showing a 182456.3% increase in the median to 2920.9KB for mobile from April 15, 2016 to July 1, 2018 and a 807.9% increase in the median to 2599.3KB for desktop">  
-          </a>
+          <h3>Those pesky images and videos tho</h3>
+          <div>
+            <a class="float-half" href="https://httparchive.org/reports/page-weight?start=2011_07_01&end=2018_07_01&view=list#bytesImg">
+              <img src="images/image-bytes.png" alt="Image Bytes trend from httparchive.org showing a 655.5% increase in the median to 794.0KB for mobile from July 1, 2011 to July 1, 2018 and a 141.1% increase in the median to 659.6KB for desktop">
+            <a class="float-half" href="https://httparchive.org/reports/page-weight?start=2011_07_01&end=2018_07_01&view=list#bytesVideo">
+              <img src="images/video-bytes.png" alt="Video Bytes trend from httparchive.org showing a 182456.3% increase in the median to 2920.9KB for mobile from April 15, 2016 to July 1, 2018 and a 807.9% increase in the median to 2599.3KB for desktop">  
+            </a>
+          </div>
         </div>
         <aside class="_stage--notes">
-          <p>Image and video size has grown exponentially year over year, and while browsers try and optimize for media in the critical view, preloading our critical media and lazyloading everything else not only will speed up out First Contentful Paint, it will reduce the overall footprint of our site, improving our user experience!</p>
+          <p>Their size has grown exponentially year over year, and while browsers try to optimize load for media in the critical view, preloading our critical media and lazyloading everything else not only will speed up out First Contentful Paint, it will reduce the overall footprint of our site, improving our user experience!</p>
+          <p>But how can we lazyload those critical media items?</p>
         </aside>
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver"><code>IntersectionObserver</code></a> allows to take action when an element is in the viewport! <span class="fragment">We can use this to do lazyloading!</span></p>
-          <pre class="fragment"><code class="language-js">const media = document.querySelectorAll('picture, img, video, audio');
+          <h3><a href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver"><code>IntersectionObserver</code></a> Is Here!</h3>
+          <pre class="fragment"><code class="language-js">const media = document.querySelectorAll('picture, img, video, audio, iframe');
 
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => {
@@ -565,15 +566,15 @@ if ('IntersectionObserver' in window) {
 }</code></pre>
         </div>
         <aside class="_stage--notes">
-          <p><code>IntersectionObserver</code> does this <em>asynchronously</em>, without us listening on the browser's scroll event! This makes it super performant</p>
-          <p>To use <code>IntersectionObserver</code>, we create an <code>observer</code> by creating a new <code>IntersectionObserver</code> and passing a function that we want to call. This will be called with an array of entries and their intersection properties, with an entry's <code>target</code> being the element. We then call <code>observer</code>'s <code>observe</code> function on an element to connect it to the observer!</p>
-          <p>Here we've got a <code>load</code> function that will do the actual loading of the elements. What I tend to do here is replace <code>src</code> with <code>data-src</code> to prevent loading, and then swap them in on load, breaking if <code>data-src</code> isn't available.</p>
-          <p>It's easy to progressively enhance <code>IntersectionObserver</code>s; we can check to see if it's in our <code>window</code> object, and if it is, we can use it, otherwise simply call our <code>load</code> function on all of our media and have the browser handle it as normal. You can get more creative here too if you want!</p>
+          <p><code>IntersectionObserver</code> asynchronously provides updates about an element's visibility, without us listening on the scroll event or jury-rigging something!</p>
+          <hr>
+          <p>We can create an <code>IntersectionObserver</code> that acts on an array of entries, in this case calling our <code>load</code> function when an entry is intersecting, or visible. We have our observer <code>observe</code> each of our media items</p>
+          <p>For lazyloading, it's easy to progressively enhance <code>IntersectionObserver</code>s; if it's not available, we can call our <code>load</code> function directly for each media item, and let the browser handle it as normal!</p>
         </aside>
       </div>
       <div class="_stage--slide">
         <div class="_stage--content">
-          <h3>And offline too?</h3>
+          <h3>And <img class="offline-dino" src="images/offline-dino.png" alt="Offline"> too?</h3>
           <pre class="fragment"><code class="language-js">if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js');
@@ -581,11 +582,18 @@ if ('IntersectionObserver' in window) {
 };</code></pre>
         </div>
         <aside class="_stage--notes">
-          <p>By introducing a Service Worker in to the mix, we can improve performance even more! Our Service Worker can cache and serve our primary route (and its critical resource), and any lazyloaded content, we'll be able to serve those back to our users again without hitting the network! This is both fast <em>and</em> offline friendly!</p>
-          <p>Unfortunately, Service Workers can be hard to mange by hand and have a real potential to cause harm if we aren't careful. Some folks over at Google have made <a href="https://developers.google.com/web/tools/workbox/">Workbox</a> to help manage them! First, though, we check to see if Service Workers are available and if so, load ours on the <code>load</code> event to ensure we don't affect performance</p>
+          <p>By introducing a Service Worker in to the mix, we can improve performance even more! Service Workers give us control over our browser's cache, even allowing us to serve resources without hitting the network!</p>
+          <hr>
+          <p>Unfortunately, they can be hard to mange by hand and have a real potential to cause harm if we aren't careful. Some folks over at Google have made <a href="https://developers.google.com/web/tools/workbox/">Workbox</a> to help with that! After registering our Service Worker on our <code>load</code> event (so it won't affect performance), we can load Workbox in and start caching in a much safer way!</p>
         </aside>
       </div>
       <div class="_stage--slide">
+        <video data-src="videos/offline-offline-dino.mp4" data-autoplay loop muted inline class="video--dino"></video>
+        <aside class="_stage--notes">
+          <p>Through a combination of preloading, lazyloading, and service workers, we can get our progressively enhanced content to our users, rendered, and usable quickly, every time, even if they're offline</p>
+        </aside>
+      </div>
+      <!-- <div class="_stage--slide">
         <div class="_stage--content">
           <pre class="float-half"><code class="language-js">importScripts('path/or/cdn/to/workbox.js');
 
@@ -624,9 +632,8 @@ workbox.routing.registerRoute(
             <dt>Network First</dt>
             <dd>Try and grab the request from the network and only if it fails serve from cache. On a successful network request, update the cache. Ideal for frequently-updating items, but a little slower than serving directly from cache.</dd>
           </dl>
-          <p>Through a combination of preloading, lazyloading, and service workers, we can get our progressively enhanced content to our users, rendered, and usable quickly, every time, even if they're offline</p>
         </aside>
-      </div>
+      </div> -->
     </section>
 
     <section class="_stage--group">
@@ -635,7 +642,7 @@ workbox.routing.registerRoute(
           <h2><span role="presentation">🎩 </span>Putting It All Together</h2>
         </div>
         <aside class="_stage--notes">
-          <p>So I have another talk I've been giving recently, <em>Magic Tricks with CSS Houdini</em>. It's built with a pre-optimized version of Stage Fright, so it's really a perfect testbed for showing how the work we've talked about here can improve real-world performance. I decided to put these lessons <em>to the test</em> and update that slide deck! For a consistent measurement, I used Chrome's built-in site audit, powered by Lighthouse.</p>
+          <p>So I have another talk I've been giving recently, <em>Magic Tricks with CSS Houdini</em>. It's built with a pre-optimized version of Stage Fright, so it's really a perfect testbed to see if we can make improvements with these lessons. So, I put them <em>to the test</em> and updated that slide deck, using Lighthouse for a consistent audit!</p>
         </aside>
       </header>
       <div class="_stage--slide">
@@ -643,7 +650,7 @@ workbox.routing.registerRoute(
           <div class="big-emoji">😐</div>
         </div>
         <aside class="_stage--notes">
-          <p>Ha. The goal of all of this work so far has been two-fold: improve the usability of our work for <em>everyone</em>, and improve our work's performance. To see why I died a little inside when I saw my original audit, I need to share how I think about performance</p>
+          <p>Ha. To see why I died a little inside when I saw my original audit, I need to share how I think about performance</p>
         </aside>
       </div>
       <div class="_stage--slide">
@@ -679,13 +686,13 @@ workbox.routing.registerRoute(
           <p>This is the <a href="https://developers.google.com/web/fundamentals/performance/rail">RAIL performance framework</a> created by Google for thinking about performance in a user-centric way. It break down performance in to 4 aspects that cover the whole lifespan of a user's interaction with an experience, and it's based on the cognitive science of how humans perceive the world. It breaks down a follows:</p>
           <dl>
             <dt>Response</dt>
-            <dd>The amount of time it takes for a user to <em>see</em> that our site is responding to their input. 100ms is the target here because humans perceive any action 100ms or less as instantaneous, and start to notice a delay above that</dd>
+            <dd>We want to acknowledge to our user that their input is being processed as soon as they ask. Humans perceive anything &lt;100ms as instantaneous, so there's our benchmark</dd>
             <dt>Animation</dt>
-            <dd>We want to aim for a smooth, stutter and jank free experience when we are animating items on our site, or even doing something as simple as scrolling. To do this, we want to be able to paint each frame so that we can keep a consistent 60 frames per second to match the most common screen refresh rate. Building each frame in 10ms will give browsers enough time to render them at 16ms, or 60fps</dd>
+            <dd>Rendering a frame, including scrolling, in 10ms will let the browser keep a consistent 60fps refresh rate, providing a jank-free experience</dd>
             <dt>Idle</dt>
-            <dd>There are things we're going to want to do in the background, but we want to ensure that they're chunked in to small pieces so that if a user goes to interact, we can still respond quickly. 50ms chunks, coupled with <code>requestIdleCallback</code>, can help us do just that</dd>
+            <dd>For background processes, we still want to be able to respond quickly. 50ms chunks give us enough headroom to respond in 100ms. <code>requestIdleCallback</code> can be our friend here</dd>
             <dt>Load</dt>
-            <dd>This is a biggun, and there are a few pieces here. First, we want to measure load against a consistent average user, both in terms of device power <em>and</em> network speed. If you know what that is for your users, great! Otherwise, the global average today is a mid-range Android device on a slow 3G network. With that, the key performance numbers we're looking at are First Contentful Paint, First Meaningful Paint, and Time to Interactive. First Contentful Paint is when users can <em>see</em> that they're getting some content, First Meaningful Pain roughly when the hero-items in a view are visible, and Time to Interactive when the page is consistently able to respond to user input. We want TTI to be less than 5000ms for our average user, with FCP and FMP being as lower than that and ideally as we can make them. SpeedIndex is another useful measurement, calculating how quickly the page appears to be completely painted.</dd>
+            <dd>This is a biggun, with lots of moving pieces. Really, though, we want our content interactive by an average user in &lt;5000ms from a cold cache. If you know your averages, great! Otherwise, the global average is a mid-range Android device on a slow 3G network. Many things affect us getting there, and the perceived performance of getting there (like First Contentful Paint, Speed Index, and First Meaningful Paint), which we generally want as fast as possible below that 5000ms</dd>
           </dl>
         </aside>
       </div>
@@ -694,7 +701,7 @@ workbox.routing.registerRoute(
           <img src="images/lh-original.png" alt="Lighthoue Scores: First Contentful Paint: 2,4000ms, Firt Meaningful Paint 3,880ms, Speed index 8,200ms, First CPU Idle 6,6470ms, Time to Interactive 7,140ms, Input Latency 717ms, Overall Performance 51, Overall Accessibility 80">
         </div>
         <aside class="_stage--notes">
-          <p>So, back to my baseline. Yeah… this is pretty terrible! I've got bad paint times, a terrible speed index, and the estimated input latency is laughably long. Even worse, diving in to the diagnostics, this was a 21MB page! It takes nearly 2.3 to boot-up my JavaScript, and my main thread chugs along for 11.6 seconds! An immediate thing jumps out at me; I could save almost 1 minute in total load and a tonne of space if I swapped my animated GIFs for videos, so I did that next</p>
+          <p>So, back to my baseline. Yeah… this is pretty terrible! I've got bad paint times, a terrible speed index, and the estimated input latency is laughably long. Even worse, diving in to the diagnostics, this was a 21MB page! An immediate thing jumps out at me; I could save almost 1 minute in total load and a tonne of space if I swapped my animated GIFs for videos, so I did that next</p>
         </aside>
       </div>
       <div class="_stage--slide">
@@ -702,8 +709,8 @@ workbox.routing.registerRoute(
           <img src="images/lh-videos.png" alt="Lighthoue Scores: First Contentful Paint: 2,3000ms, Firt Meaningful Paint 3,910ms, Speed index 3,020ms, First CPU Idle 5,970ms, Time to Interactive 6,250ms, Input Latency 618ms, Overall Performance 75, Overall Accessibility 81">
         </div>
         <aside class="_stage--notes">
-          <p>It's amazing what can happen just by changing our media a bit! Moving all animated GIFs to muted, inline, looped, autoplaying HTML5 video drops our payload almost 10 fold to 2.7MB. While First Meaningful Paint stays mostly the same, Speed Index drastically improves, a does First CPU Idle, Time to Interactive, and Input Latency! JavaScript boot-up is about the same, too, but main thread work drops by more than 2.5 seconds!</p>
-          <p>Ok, time to finally swap in the new Stage Fright that was rewritten based on the recommendations in this talk. Bonus! I also optimized font loading to asynchronously load in just what was needed for the initial display!</p>
+          <p>It's amazing what can happen just by changing our media a bit! Moving all animated GIFs to HTML5 video drops our payload almost 10 fold to 2.7MB. While First Meaningful Paint stays mostly the same, Speed Index drastically improves, as does First CPU Idle, Time to Interactive, and Input Latency! Just this change also reduced main thread work by more than 2.5 seconds!</p>
+          <p>Ok, time to finally swap in the new Stage Fright. Bonus! I also optimized the critical load!</p>
         </aside>
       </div>
       <div class="_stage--slide">
@@ -711,7 +718,9 @@ workbox.routing.registerRoute(
           <img src="images/lh-optimized.png" alt="Lighthoue Scores: First Contentful Paint: 2,7000ms, Firt Meaningful Paint 4,880ms, Speed index 2,700ms, First CPU Idle 5,760ms, Time to Interactive 6,650ms, Input Latency 241ms, Overall Performance 71, Overall Accessibility 81">
         </div>
         <aside class="_stage--notes">
-          <p>Some things got better, some got worse. Speed Index is the real winner here, and you can see that change in the render timeline. First Meaningful Paint <em>seemed</em> to get wore, but on initial blush it's not clear why. One thing that <em>did</em> drop dramatically, though, is the effect of JavaScript on system. Input latency fell by nearly 400ms, main thread work is down to 8s, and our JavaScript boot-up time is finally green at 1.3 second! What's significant about this is I'm shipping about the same amount of JavaScript both with the old and new versions, but the new version is optimized for and delivered via modern JavaScript and Progressive Enhancement, making <em>better</em> use of each byte sent.</p>
+          <p>Some things got better, some got worse. Speed Index is the real winner, and the render timeline <em>appears</em> to show content immediately even if First Contentful Paint seems a little high. First Meaningful Paint <em>seemed</em> to get wore, but on initial blush it's not clear why.</p>
+          <p>One thing that <em>did</em> drop dramatically, though, is the effect of JavaScript on system. Input latency fell by nearly 400ms, main thread work is down to 8s from a high of 11.6s, and our JavaScript boot-up time is finally green at 1.3 second!</p>
+          <p>What's amazing here is that's all true while shipping about the same amount of JavaScript. The difference? The new code is optimized for and delivered via modern JavaScript and Progressive Enhancement, making <em>better</em> use of each byte sent.</p>
           <p>While our accessibility score improved slightly, the actual real-world accessibility improved greatly here, as it is now actually usable by keyboard-only users</p>
           <p>There's something I feel like I'm missing, though, something that can improve everything even more…</p>
         </aside>
@@ -719,7 +728,7 @@ workbox.routing.registerRoute(
       <div class="_stage--slide">
         <h2 class="code-split fragment"><span class="code-split--code">Code</span> <span class="code-split--split">Splitting</span></h2>
         <aside class="_stage--notes">
-          <p>Code Splitting is a technique where you load <em>just the bits you need to get started</em>, and then <em>progressively load</em> additional pieces (or chunks) as-needed! We can do this natively with the <code>import</code> function (which will need a polyfill for some browsers), or we can have our JavaScript bundlers like Rollup or Webpack help. Bonus if doing that, they can dynamically generate our chunks to optimize the loading!</p>
+          <p>Code Splitting is a technique, especially for JavaScript, where <em>just the bits needed to get started</em> are loaded first, and then additional pieces (or chunks) are <em>progressively load</em> as-needed! We can do this natively with the <code>import</code> function, or we can have our JavaScript bundlers like Rollup or Webpack help. Bonus if doing that, they can dynamically generate our chunks to optimize the loading!</p>
           <p>We have a couple <code>if</code> statements in Stage Fright that have self-contained functionality; those seem like a good place to code split.</p>
         </aside>
       </div>
@@ -728,8 +737,10 @@ workbox.routing.registerRoute(
           <img src="images/lh-codesplit.png" alt="Lighthoue Scores: First Contentful Paint: 1,8000ms, Firt Meaningful Paint 5,060ms, Speed index 2,210ms, First CPU Idle 5,060s, Time to Interactive 5,730ms, Input Latency 50ms, Overall Performance 80, overall Accessibility 82">
         </div>
         <aside class="_stage--notes">
-          <p>Boom! Code splitting to the rescue! All of our scores, except First Meaningful Paint, have plummeted, with the biggest gains coming in First Contentful Paint, Time to Interactive, and Input Latency! Seeing as how First Meaningful Paint has increased, I think Lighthoue is keying that off of the minimap, which is one of the things I've code-split in to a deferred load, so that going up was expected, but doesn't actually negatively affect our real-world performance.</p>
-          <p>Doing this code splitting dropped our initial JavaScript payload <em>in half</em>, dropping JavaScript bootup time to 1.2s and main thread work down by another 300ms to 7.7 seconds. Even crazier, for a presentation that started at 21MB, the initial payload size is now only 910KB!</p>
+          <p>Boom! Code splitting to the rescue! All of our scores, except First Meaningful Paint, have plummeted, with the biggest gains coming in perceived performance and our RAIL-related metrics! Seeing as how First Meaningful Paint has increased, I think Lighthoue is keying that off of the minimap, which is one of the things I've code-split in to a deferred load and therefore expected to take longer to load. The render timeline shows it doesn't affect perceived performance much, though.</p>
+          <p>Doing this code splitting dropped our initial JavaScript payload <em>in half</em>. Even crazier, for a presentation that started at 21MB, the initial payload size is now only 910KB!</p>
+          <hr>
+          <p>Phew! We did it! Only thing left to do is…</p>
         </aside>
       </div>
     </section>
@@ -744,24 +755,93 @@ workbox.routing.registerRoute(
         </aside>
       </header>
       <div class="_stage--slide">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Comparison chart of previously-discussed performance statistics" role="presentation" class="_stage--content" viewBox="0 0 1049 556"><defs><style>.cls-2{fill:#fff;fill-opacity:0}.cls-11,.cls-3{isolation:isolate;font-size:16px}.cls-3{fill:#222}.cls-11,.cls-4{fill:#36c}.cls-5{fill:#dc3912}.cls-6{fill:#f90}.cls-7{fill:#109618}.cls-9{fill:#ccc}.cls-11{fill:#444}.cls-13{letter-spacing:-0.0181em}</style><clipPath id="clip-path"><path fill="none" d="M165 0h600v464H165z"/></clipPath></defs><path d="M781 0h268v94H781z" class="cls-2"/><path d="M781 0h268v16H781z" class="cls-2"/><text class="cls-3" transform="translate(819 13.6)">Unoptimized</text><path d="M781 0h32v16h-32z" class="cls-4"/><path d="M781 26h268v16H781z" class="cls-2"/><text class="cls-3" transform="translate(819 39.6)">Optimized Media</text><path d="M781 26h32v16h-32z" class="cls-5"/><path d="M781 52h268v16H781z" class="cls-2"/><text class="cls-3" transform="translate(819 65.6)">New Stage Fright</text><path d="M781 52h32v16h-32z" class="cls-6"/><path d="M781 78h268v16H781z" class="cls-2"/><text class="cls-3" transform="translate(819 91.6)">Code Split</text><path d="M781 78h32v16h-32z" class="cls-7"/><path d="M165 0h600v464H165z" class="cls-2"/><g clip-path="url(#clip-path)"><path d="M165 0h1v464h-1zM315 0h1v464h-1zM465 0h1v464h-1zM614 0h1v464h-1zM764 0h1v464h-1z" class="cls-9"/><path d="M166 18h119v14H166zM166 111h408v13H166zM166 203h355v14H166zM166 296h578v14H166zM166 389h35v13h-35z" class="cls-4"/><path d="M166 33h114v13H166zM166 125h150v14H166zM166 218h311v13H166zM166 311h453v13H166zM166 403h30v14h-30z" class="cls-5"/><path d="M166 47h134v14H166zM166 140h134v13H166zM166 232h331v14H166zM166 325h398v14H166zM166 418h11v13h-11z" class="cls-6"/><path d="M166 62h89v13h-89zM166 154h109v14H166zM166 247h285v14H166zM166 340h383v13H166zM165.999 432h1.997v14h-1.997z" class="cls-7"/><path fill="#333" d="M165 0h1v464h-1z"/></g><text class="cls-11" transform="translate(161.05 487.6)">0</text><text class="cls-11" transform="translate(295.23 487.6)">3,000</text><text class="cls-11" transform="translate(444.98 487.6)">6,000</text><text class="cls-11" transform="translate(594.73 487.6)">9,000</text><text class="cls-11" transform="translate(740.031 487.6)">12,000</text><text class="cls-3" transform="translate(-.398 52.4)">First Contentful Paint</text><text class="cls-3" transform="translate(59.148 145)">Speed Index</text><text class="cls-3" transform="translate(17.992 237.6)"><tspan letter-spacing="-.037em">T</tspan><tspan x="9.18" y="0">ime to Interactive</tspan></text><text class="cls-3" transform="translate(17.984 330.2)">Main<tspan x="34.68" y="0" class="cls-13"> </tspan><tspan x="38.836" y="0">Thread </tspan><tspan x="93.977" y="0" class="cls-13">W</tspan><tspan x="108.789" y="0">ork</tspan></text><text class="cls-3" transform="translate(52.93 422.8)">Input Latency</text><text fill="#222" class="cls-3" font-size="16" font-style="italic" style="isolation:isolate" transform="translate(429.078 554.1)"><tspan letter-spacing="-.009em">Time (ms)</tspan></text><path d="M165 540.5h600v16H165z" class="cls-2"/></svg>
+        <aside class="_stage--notes">
+          <table>
+            <thead>
+              <th>Statistic</th>
+              <th>Uncompressed</th>
+              <th>Optimized Media</th>
+              <th>New Stage Fright</th>
+              <th>Code Split</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>First Contentful Paint</td>
+                <td>2400ms</td>
+                <td>2300ms</td>
+                <td>2700ms</td>
+                <td>1800ms</td>
+              </tr>
+              <tr>
+                <td>Speed Index</td>
+                <td>8200ms</td>
+                <td>3020ms</td>
+                <td>2700ms</td>
+                <td>2210ms</td>
+              </tr>
+              <tr>
+                <td>Time to Interactive</td>
+                <td>7140ms</td>
+                <td>6250ms</td>
+                <td>6650ms</td>
+                <td>5730ms</td>
+              </tr>
+              <tr>
+                <td>Main Thread Work</td>
+                <td>11600ms</td>
+                <td>9100ms</td>
+                <td>8000ms</td>
+                <td>7700ms</td>
+              </tr>
+              <tr>
+                <td>Input Latency</td>
+                <td>717ms</td>
+                <td>618ms</td>
+                <td>241ms</td>
+                <td>50ms</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Taking a look at how some of our key RAIL statistics next to each other, a couple things pop out as lessons we can take back:</p>
+          <ul>
+            <li>Media has a <em>huge</em> effect on perceived and actual performance! We should use less of it, and what we do use should be lazyloaded and <em>must</em> be optimized</li>
+            <li>Modern JavaScript seems to put less of a strain on browsers, so we should aim to serve more of that uncompiled, but that won't magically fix getting our sites interactive quickly!</li>
+            <li>Serving less JavaScript, though seems to be a pretty magical fix! We should serve as little of it as possible to our users, and whatever isn't needed immediately should be lazyloaded in only when needed.</li>
+          </ul>
+          <p>In getting here, I've found success in…</p>
+        </aside>
+      </div>
+      <div class="_stage--slide">
         <div class="_stage--content">
           <ul>
             <li>Designing tool and technique agnostic <strong>core experiences</strong> to focus on our user's needs as opposed to just features</li>
-            <li class="fragment">Embracing <strong>progressive enhancement</strong> will allow us to deliver our core experiences regardless of browser or device</li>
-            <li class="fragment">Enhancing our experience by <strong>Cutting the Mustard</strong> enabling us to deliver modern JavaScript without transpiling</li>
+            <li class="fragment">Embracing <strong>progressive enhancement</strong> to allow us to deliver our core experiences regardless of browser or device</li>
+            <li class="fragment">Enhancing our experience by <strong>Cutting the Mustard</strong>, enabling us to deliver modern JavaScript without transpiling</li>
             <li class="fragment">Managing our application with a <strong>State Manager</strong> to coordinate state changes with minimal overhead</li>
             <li class="fragment">Utilizing <strong><code>preload</code></strong>, <strong><code>IntersectionObserver</code></strong>, <strong>Service Workers</strong>, and <strong>Code Splitting</strong> to speed up and inclemently deliver our experience</li>
           </ul>
         </div>
         <aside class="_stage--notes">
-          <p></p>
+          <div id="compare-chart"></div>
         </aside>
       </div>
     </section>
     <section class="_stage--group">
       <footer class="_stage--slide">
         <div class="_stage--content">
-          <p class="big-emoji">👍</p>
+          <p class="end-emoji">👍</p>
+          <p class="end-link">http://snugug.github.io/slides-about-slides</p>
+          <ul>
+            <li><a href="https://twitter.com/snugug">@snugug</a></li>
+            <li><a href="https://github.com/Snugug/stage-fright">Stage Fright Source</a> <ul>
+              <li><a href="https://github.com/Snugug/stage-fright/blob/2.x/src/js/lib/init.js#L19">Grade X to Grade B Upgrade</a></li>
+              <li><a href="https://github.com/Snugug/stage-fright/tree/2.x/src/js/lib/state">State Manager</a></li>
+              <li><a href="https://github.com/Snugug/stage-fright/blob/2.x/src/js/lib/init.js#L60-L109">State Subscription</a></li>
+              <li><a href="https://github.com/Snugug/stage-fright/blob/2.x/src/js/lib/lazyload.js">Lazyload</a></li>
+              <li><a href="https://github.com/Snugug/stage-fright/blob/2.x/src/js/lib/init.js#L111-L119">Code Split Upgrade</a></li>
+            </ul></li>
+          </ul>
         </div>
       </footer>
     </section>

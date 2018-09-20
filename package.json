@@ -8,7 +8,10 @@
     "js": "rollup -c",
     "js:watch": "rollup -c -w",
     "dev": "gulp serve & npm run js:watch",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "build": "rm -r .www && NODE_ENV=production npm run js && npm run gulp build",
+    "pages": "gh-pages -d .www",
+    "deploy": "npm run build && npm run pages"
   },
   "repository": {
     "type": "git",
@@ -26,8 +29,10 @@
     "babel-preset-minify": "^0.4.3",
     "browser-sync": "^2.24.7",
     "eyeglass": "^1.5.0",
+    "gh-pages": "^2.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-sass": "^4.0.1",
     "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^2.6.4",
@@ -39,6 +44,8 @@
     "sass": "^1.13.4"
   },
   "dependencies": {
-    "stage-fright": "^2.0.1"
+    "chartist": "^0.11.0",
+    "d3": "^5.7.0",
+    "stage-fright": "^2.1.0"
   }
 }
