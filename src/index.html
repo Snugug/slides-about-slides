@@ -834,6 +834,7 @@ workbox.routing.registerRoute(
           <p class="end-link">http://snugug.github.io/slides-about-slides</p>
           <ul>
             <li><a href="https://twitter.com/snugug">@snugug</a></li>
+            <li><a href="https://github.com/snugug/slides-about-slides">Slides about Slides Source</a></li>
             <li><a href="https://github.com/Snugug/stage-fright">Stage Fright Source</a> <ul>
               <li><a href="https://github.com/Snugug/stage-fright/blob/2.x/src/js/lib/init.js#L19">Grade X to Grade B Upgrade</a></li>
               <li><a href="https://github.com/Snugug/stage-fright/tree/2.x/src/js/lib/state">State Manager</a></li>
@@ -846,5 +847,13 @@ workbox.routing.registerRoute(
       </footer>
     </section>
   </article>
+  <script>
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js');
+      });
+    }
+  </script>
 </body>
 </html>
