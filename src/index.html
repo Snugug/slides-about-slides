@@ -575,16 +575,30 @@ if ('IntersectionObserver' in window) {
       <div class="_stage--slide">
         <div class="_stage--content">
           <h3>And <img class="offline-dino" src="images/offline-dino.png" alt="Offline"> too?</h3>
-          <pre class="fragment"><code class="language-js">if ('serviceWorker' in navigator) {
+          <div>
+            <pre class="fragment float-half"><code class="language-js">if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js');
   });
 };</code></pre>
+            <pre class="fragment float-half"><code class="language-js">module.exports = {
+  globDirectory: '.www',
+  swDest: '.www/sw.js',
+  maximumFileSizeToCacheInBytes: 4.5 * 1024 * 1024,
+  runtimeCaching: [{
+      urlPattern: new RegExp('.(?:js|css|html)$'),
+      handler: 'staleWhileRevalidate',
+    }, {…}],
+};</code></pre>         
+          </div>
+
         </div>
         <aside class="_stage--notes">
-          <p>By introducing a Service Worker in to the mix, we can improve performance even more! Service Workers give us control over our browser's cache, even allowing us to serve resources without hitting the network!</p>
+          <p>By introducing a Service Worker in to the mix, we can improve performance even more! Service Workers give us control over our browser's cache, even allowing us to serve resources without hitting the network! We load it in on our <code>load</code> event (so it won't affect performance)</p>
           <hr>
-          <p>Unfortunately, they can be hard to mange by hand and have a real potential to cause harm if we aren't careful. Some folks over at Google have made <a href="https://developers.google.com/web/tools/workbox/">Workbox</a> to help with that! After registering our Service Worker on our <code>load</code> event (so it won't affect performance), we can load Workbox in and start caching in a much safer way!</p>
+          <p>Unfortunately, the first rule of Service Workers? <strong>Don't Write A Service Worker!</strong>. They're hard to mange by hand and have a real potential to cause harm if without extreme care.</p>
+          <hr>
+          <p>Fortunately, some folks over at Google have made <a href="https://developers.google.com/web/tools/workbox/">Workbox</a> which is (relatively) easy to configure! After configuring it, Workbox can generate a Service Worker that'll be <em>much more likely</em> to not cause us grief</p>
         </aside>
       </div>
       <div class="_stage--slide">
